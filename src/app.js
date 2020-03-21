@@ -6,6 +6,9 @@ const forecast=require('./utils/forecast')
 
 const app=express()
 
+//specify port to be used by the app
+const port=process.env.PORT || 3000
+
 //setup the express view engine
 app.set('view engine','hbs')
 
@@ -108,6 +111,6 @@ app.get('*',(req,res)=>{
     })
 })
 //starting up the server
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000')
+app.listen(port,()=>{
+    console.log('Server is up on port' + port)
 })
